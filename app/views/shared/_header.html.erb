@@ -27,6 +27,10 @@
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </li>
       </ul>
+
+      <% if current_user && (current_user.status == 'admin' || current_user.status == 'editor') %>
+        <%= link_to 'Admin', admin_root_path, class: 'btn btn-outline-success' %>
+      <% end %>
       <% if current_user %>
         <%= button_to 'LogOut', destroy_user_session_path, method: :delete, class: 'btn btn-outline-success' %>
       <% else %>
