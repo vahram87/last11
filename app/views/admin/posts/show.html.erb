@@ -11,5 +11,10 @@
         <%= @post.content %>
       </p>
     </div>
+    <% if @post.photo.present? %>
+      <%= image_tag @post.photo %>
+    <% else %>
+      <img src="/nkar.webp">
+    <% end %>
   </div>
 </div>
